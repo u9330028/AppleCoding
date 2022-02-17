@@ -18,6 +18,7 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 10px;
+    border: rgb(209, 27, 27);
 }
 
 #_name {
@@ -44,6 +45,8 @@ p {
     height: 800px;
     float : left;
     background-color: aqua;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .right-box {
