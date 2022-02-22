@@ -1,0 +1,28 @@
+.containerText {
+    background-color: blueviolet;
+    border: 2px solid blue;
+    /* border-color: black; */
+    display: block;
+    /* float: left; */
+}
+
+.navbar li{
+    background-color: bisque;
+    display: inline-block;
+    text-align: left;
+    border: 1px solid rebeccapurple;
+    border-color: red;
+    float: left;
+}
+
+.navbar span {
+    color: red;
+}
+
+.linka {
+    text-decoration: none;
+}
+
+.linka:visited {
+    color: brown;
+}

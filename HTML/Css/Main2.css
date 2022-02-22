@@ -1,0 +1,30 @@
+.main-background {
+    width: 100%;
+    height: 800px;
+    background-image: url(../Images/Kimprofile.jpg);
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* border-color: rgb(146, 28, 101);
+    border: 2px; */
+    /* display: left; */
+    /* padding: 0.5px; */
+    /* filter: brightness(70%); */
+    /* background-attachment: fixed; */
+}
+
+.main-title {
+    color: white;
+    font-size: 40px;
+    margin-top: 300px;
+}
+
+.main2-background {
+    margin-top: 1px;
+    padding: 5px;
+    color: blueviolet;
+    font-size: 120%;
+    border: 3px solid black;
+    background-color: antiquewhite;
+    /* border-color: black; */
+}
