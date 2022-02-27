@@ -1,0 +1,39 @@
+.main__container {
+    /* margin: 0; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+
+}
+
+.m__c--f {
+    width: 100px;
+    height: 100px;
+    background: gray;
+    margin: 5px;
+
+    /* align-items: center; */
+
+}
+
+.toTable {
+    /* display: table; */
+    width: 200px;
+    height: 50px;
+    border: 1px solid rgb(34, 28, 28);
+    background-color: yellow;
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    margin: 4px;
+    /* margin-top: -50px; */
+    /* margin-left: -100px; */
+}
+    
+.echo {
+    /* display: table-cell; */
+    /* padding: 50px; */
+    text-align: center;
+    vertical-align:middle;
+}
