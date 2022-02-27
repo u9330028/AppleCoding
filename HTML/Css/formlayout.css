@@ -1,0 +1,28 @@
+div, input, textarea {
+    box-sizing: border-box;
+}
+input[type=email] {
+    color : blue;
+}
+
+.main-form {
+    background-color: white;
+    /* border-color: blue; */
+    border: 1px solid black;
+    width: 400px;
+    padding: 2px;
+    margin: 100px;
+    text-align: left;
+    /* float: center; */
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+    float: left;
+}
+
+
