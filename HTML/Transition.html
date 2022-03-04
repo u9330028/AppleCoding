@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Transition Groups</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<style>
+    .shop-bg {
+        background-color: #eee;
+        padding: 20px;
+    }
+
+    .shop-container {
+        display: flex;
+        width: 90%;
+        margin: auto;
+    }
+
+    .shop-item {
+        width: 33%;
+        padding: 10px;
+    }
+
+    .shop-item img {
+        width: 100%;
+        display: block;
+    }
+
+    .box {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 5);
+        opacity: 0;
+        transition: all 1s;
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+
+    }
+
+    .box:hover {
+        opacity: 0.5;
+    }
+
+    .box-w {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .box-1 {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        margin-top: 100%;
+    }
+
+    .box-w:hover .box-1 {
+        margin-top: 50%;
+        transition: all 1s;
+    }
+</style>
+
+<body>
+    <div>
+        <h3>Shop List</h3>
+        <div class="shop-bg">
+            <div class="shop-container">
+                <div class="shop-item">
+                    <div style="position: relative">
+                        <div class="box-w">
+                            <div class="box-1"><span>60% Rate</span></div>
+                        </div>
+                        <img src="/Images/product1-1.jpg">
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <img src="/Images/product2.jpg">
+                </div>
+                <div class="shop-item">
+                    <img src="/Images/product3.jpg">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
