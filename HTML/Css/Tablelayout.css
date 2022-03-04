@@ -1,0 +1,84 @@
+.main-bg {
+    background-color: antiquewhite;
+    /* align-content: center;  */
+    /* position: absolute; */
+    /* left: 50%; */
+    width: 100%;
+    padding: 30px;
+}
+.cart-table {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    background-color: white;
+    border-radius: 20px;
+}
+td,th {
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+.btn {
+    width: 120px;
+    background-color: bisque;
+    padding: 2;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.btn:hover {
+    background: blue;
+}
+
+.btn:focus {
+    background: red;
+}
+
+.btn:active {
+    background: gray;
+}
+
+.input {
+    border: 2px solid red;
+}
+
+.input:focus {
+    border: 2px solid blue;
+}
+
+a:link {
+    color : red;
+}
+
+a:visited {
+    color: black;
+}
+
+.profile {
+
+}
+
+.profile__button--name{
+    font-size : 20px;
+    padding : 15px;
+    border : none;
+    cursor : pointer;
+}
+
+.btn-1 {
+    background: green;
+}
+
+.btn-2 {
+    background: yellow;
+}
+
+.font-small {
+font-size : 12px;
+}
+.font-medium {
+font-size : 16px;
+}
+.font-lg {
+font-size : 20px;
+}
