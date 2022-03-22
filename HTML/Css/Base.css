@@ -1,0 +1,53 @@
+.box {
+  font-size: 22px;
+  width: 360px;
+  background: red;
+}
+
+.text {
+  background-color: blue;
+}
+
+.btn-green, .btn-blue, .btn-red {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.cmn_, .btn-brown__, .btn-green__, .btn-blue__, .btn-red__ {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.btn-red {
+  background: red;
+}
+.btn-red h {
+  font-size: 50px;
+}
+
+.btn-blue {
+  background: blue;
+}
+
+.btn-green {
+  background: green;
+}
+
+.btn-red__ {
+  background: red;
+}
+
+.btn-blue__ {
+  background: blue;
+}
+
+.btn-green__ {
+  background: green;
+}
+
+.btn-brown__ {
+  background: brown;
+  font-size: 24px;
+}/*# sourceMappingURL=Base.css.map */

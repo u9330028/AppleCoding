@@ -1,0 +1,66 @@
+$main-color : red;
+$sub-color: blue;
+$base-font : 12px;
+
+.box {
+    font-size: $base-font + 10px;
+    width: ($base-font * 30);
+    background: $main-color;
+}
+
+.text {
+    background-color: $sub-color;
+}
+
+
+%cmn {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+}
+
+.cmn_ {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+}
+
+
+.btn-red {
+    h {
+        font-size: 50px;
+    }
+    @extend %cmn;
+    background: red;
+}
+
+.btn-blue {
+    @extend %cmn;
+    background: blue;
+}
+
+.btn-green {
+    @extend %cmn;
+    background: green;
+}
+
+.btn-red__ {
+    @extend .cmn_;
+    background: red;
+}
+
+.btn-blue__ {
+    @extend .cmn_;
+    background: blue;
+}
+
+.btn-green__ {
+    @extend .cmn_;
+    background: green;
+}
+.btn-brown__ {
+    @extend .cmn_;
+    background: brown;
+    font-size: ($base-font * 2);
+
+}
