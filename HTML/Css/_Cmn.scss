@@ -1,0 +1,13 @@
+$Ex-BG:red; 
+
+.body {
+    margin: 0;
+    width: 500px;
+    height: 400px;
+}
+
+
+@mixin BB {
+    color : blue;
+    font-size: 50px;
+}

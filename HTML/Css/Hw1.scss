@@ -1,0 +1,25 @@
+@use "_Cmn.scss";
+
+%aa {
+        list-style: none;
+        padding: 15px;
+        border: 1px solid #eee;
+}
+
+@mixin fnBg($p1) {
+    color: $p1    
+}
+
+.Ul-1 {
+    li {
+        @extend %aa;
+    }
+    .Ui-1 {
+        @include fnBg(Cmn.$Ex-BG);
+        background: skyblue;
+    }
+
+    .Ui-2 {
+        @include Cmn.BB();
+    }
+}
