@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' type='text/css' media='screen' href=''>
+
+</head>
+
+<body>
+    <script type="module">
+
+        // import cccc, { aaaa, bbbb } from './JS/LibImExport.js';
+        import cccc, { aaaa as a, bbbb as b } from './JS/LibImExport.js';
+        console.log(cccc);
+        console.log(a + b);
+
+        console.log(1);
+        setTimeout(() => { console.log(3) }, 100);
+        console.log(2);
+        // var myWorker = new Worker('worker.js');
+
+        // myWorker.onmessage = function (e) {
+        //     console.log(e.data) //이러면 1 나올듯
+        // };
+
+        // var i = 0;
+        // postMessage(i + 1); //postMessage라는 특별한 함수가 있음
+
+    </script>
+</body>
+
+</html>

@@ -18,20 +18,20 @@ console.log(c);
 //reference type
 
 
-//objectµµ º¹»ç ÇØ¼­ »ç¿ëÇØ¼­ °¡´É ÇÕ´Ï´Ù.
-//01.Áßº¹Àº µŞ °ªÀ» Àû¿ëÀÌ °¡´É ÇÕ´Ï´Ù.
+//objectï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.
+//01.ï¿½ßºï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.
 var o1 = { a: 1, b: 2 };
 var o2 = { ...o1, c: 3 };
 
 console.log(o2);
 
-//...Àº Áß°ıÈ£/¼Ò°ıÈ£/ÇÔ¼ö ¾È¿¡¼­ »ç¿ë °¡´É ÇÕ´Ï´Ù.
+//...ï¿½ï¿½ ï¿½ß°ï¿½È£/ï¿½Ò°ï¿½È£/ï¿½Ô¼ï¿½ ï¿½È¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.
 
 
 
 //*********************************************************** */
 
-//ÇÔ¼ö¿¡ ÆÄ¶ó¸ŞÅÍ¸¦ ³ÖÀ»¶§ »ç¿ë ÇÕ´Ï´Ù.
+//ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½Ä¶ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.
 let add = (a, b, c) => { console.log(a + b + c) }
 
 add(...a);
@@ -71,5 +71,280 @@ function ArgU1(a, b, c) {
     }
 }
 
+let ArgU2 = (a, b, c) => {
+    console.log(`a = ${a} b = ${b} c = ${c}`);
+}
+
+let ArgU3 = (...rest) => {
+    console.log(`a = ${rest[0]} b = ${rest[1]} c = ${rest[2]}`);
+}
+
+let ArgU4 = (a, ...rest) => {
+    console.log("a ==> " + a + ` a = ${rest[0]} b = ${rest[1]} c = ${rest[2]}`);
+}
+
 ArgU0(1, 2, 3);
 ArgU1(3, 4, 5);
+ArgU2(3, 4, 5);
+ArgU4("A", 4, 5, 6);
+
+//=-=================================================================
+//Question 1
+var aa = [1, 2, 3];
+var bb = 'ê¹€ë°¥';
+var cc = [...bb, ...aa];
+console.log(cc);
+
+
+//Question 2
+a = [1, 2, 3];
+b = ['you', 'are'];
+c = function (a, b) {
+    console.log([[...a], ...[...b]][0])
+}
+c(a, b); //-> [[1,2,3],you, are]
+
+
+//Question 3
+function í•¨ìˆ˜(a = 5, b = a * 2) {
+    console.log(a + b);
+    return 10
+}
+í•¨ìˆ˜(4); //-> 12
+
+//Question 4
+function í•¨ìˆ˜(a = 5, b = a * 2) {
+    console.log(a + b);
+}
+í•¨ìˆ˜(undefined, undefined); //15
+
+//Question 5
+function ì–´ë ˆì´(...newArray) {
+    return [...newArray];
+}
+
+var newArray = ì–´ë ˆì´(1, 2, 3, 4, 5);
+console.log(newArray);
+
+//Question 6
+var numbers = [2, 3, 4, 5, 6, 1, 3, 2, 5, 5, 4, 6, 7];
+console.log(Math.max(...numbers));
+
+
+//Question 7
+function ì •ë ¬(arrB) {
+    var ii = arrB;
+    ii = [...ii];
+    // for (var i = 0; i < arrB.length; i++) {
+    //     //        ii = arrB[i];
+    //     console.log(ii.sort());
+    // }
+    console.log(ii.sort());
+}
+
+ì •ë ¬('bear');
+
+//Question 8
+function JJ(inPut) {
+    var inC = inPut;
+    var arrC = [...inC];
+    var objC = new Object();
+    for (var i = 0; i < arrC.length; i++) {
+        let wcount = arrC.filter(element => arrC[i] === element).length;
+        console.log(wcount);
+
+        objC[arrC[i]] = wcount;
+
+    }
+
+    console.log(objC);
+}
+
+
+var NN = { name: 'Jane' };
+
+
+//ìƒˆë¡œ ë³€ìˆ˜ë¥¼ ë§Œë“œëŠ” ê²ƒê³¼ ë™ì¼í•˜ë‹¤.
+function KK(obj) {
+    obj = { name: 'Kim' };
+    var objR = obj;
+    console.log(`${NN.name} __ ${objR.name}`);
+}
+
+
+JJ('aaacccabcef');
+
+KK(NN);
+
+
+//ë¶€ê°€ì„¸
+
+var DD = {
+    product: 'hey',
+    price: 2000,
+    tax: function () {
+        console.log(`ë¶€ê°€ì„¸ëŠ” ${this.price * 0.1} ì…ë‹ˆë‹¤`);
+    }
+}
+
+
+function Pd(Nn, Pr) {
+    this.product = Nn,
+        this.Price = Pr,
+        this.Tax = function () {
+            console.log(`ë¶€ê°€ì„¸ëŠ” ${this.Price * 0.1} ì…ë‹ˆë‹¤`);
+            //console.log(this.Price * 0.1);
+        }
+}
+
+Pd.prototype.func = function () {
+    console.log("Prototype í…ŒìŠ¤íŠ¸ ì¤‘ ì…ë‹ˆë‹¤.");
+}
+
+var AAA = new Pd('ê°ì', 1000);
+var BBB = new Pd('í˜¸ë°•', 3000);
+BBB.func();
+
+var arrA = ['a', 'b', 'c'];
+var arrD = new Array(1, 2, 3);
+
+console.log(Array.prototype);
+
+
+function MM() {
+    this.name = 'kim';
+    this.age = 15;
+}
+
+MM.prototype.gender = 'ë‚¨';
+
+var mm = new MM();
+
+
+function student(name, age) {
+    this.name = name;
+    this.age = age;
+    this.sayhi = function () {
+        console.log("hi myname " + this.name + "oo");
+    }
+
+}
+
+var stu1 = new student('kim', 30);
+stu1.sayhi();
+
+function Parent() {
+    this.name = 'kim';
+}
+
+var ccc = new Parent();
+ccc.__proto__.name = 'park';
+console.log(ccc.name);
+
+
+Array.prototype.del3 = function () {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] === 3) {
+            this.splice(i, 1);
+        }
+    }
+};
+
+var arrT = [1, 2, 3, 4];
+arrT.del3();
+
+console.log(arrT);
+
+
+var aTT = { name: 'kk', age: 30 };
+var aTTh = Object.create(aTT);
+
+aTTh.age = 40;
+
+var aTThh = Object.create(aTTh);
+
+
+class ParentAll {
+    constructor() {
+        this.brother1 = 'can';
+        this.brother2 = 'do';
+    }
+
+    get getbrothers() {
+        return this.brother1 + " " + this.brother2;
+    }
+
+    set setbrother1(nn) {
+        this.brother1 = String(nn);
+    }
+}
+
+
+class ParentAll2 extends ParentAll {
+    constructor() {
+        super()
+        this.brother3 = 'it';
+    }
+
+    fnCall() {
+        console.log(this.brother1 + this.brother2 + this.brother3);
+    }
+}
+
+var pA = new ParentAll2();
+pA.fnCall();
+
+class ê°•ì•„ì§€ {
+    constructor(C, T) {
+        this.type = T;
+        this.color = C;
+    }
+
+    //     toGo(this instanceof ê°œ) {
+    //     this.age++;
+    // }
+}
+
+var ê°•ì•„ì§€1 = new ê°•ì•„ì§€('ë§í‹°ì¦ˆ', 'í°ìƒ‰');
+var ê°•ì•„ì§€2 = new ê°•ì•„ì§€('ì§„ë—ê°œ', 'ë¸Œë™');
+
+class ê°œ extends ê°•ì•„ì§€ {
+    constructor(C, T, D) {
+        super(C, T);
+        this.age = D;
+    }
+}
+
+var ê°•ì•„ì§€3 = new ê°œ("a", 'B', 3);
+
+var data = {
+    odd: [1, 3],
+    even: [2, 4, 6],
+    get getterí•¨ìˆ˜() {
+        return [...this.odd, ...this.even].sort()
+    }
+};
+
+console.log(data.getterí•¨ìˆ˜);
+
+
+//*Part-03//////////////////////////////////////////////////////////////////
+//í‹€ë¦°ê·¸ë¦¼ ì°¾ê¸°ëŠ¥ë ¥ì´ í–¥ìƒë˜ëŠ” Destructuring ë¬¸ë²•
+
+var [x, y, z] = [1, 2, 3];
+
+var { xx, yy } = { xx: 'a', yy: 'b' };
+
+xx = 'b';
+yy = 'c';
+
+var zz = { xx: xx, yy: yy };
+zz = { xx, yy };
+
+function zzz([a, b]) {
+    console.log(a);
+    console.log(b);
+}
+
+zzz([1, 2]);
+
