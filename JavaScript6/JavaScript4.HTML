@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' type='text/css' media='screen' href=''>
+
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <img id="TT" src="https://codingapple1.github.io/kona.jpg">
+    <button id="BTN1">AsyncAwait1</button>
+    <button id="BTN2">AsyncAwait2</button>
+
+    <script>
+
+        let PPr = new Map();
+        PPr.set('name', 'kim');
+        PPr.set('age', 30);
+        PPr.get('age');
+        // ppr.size;
+        // ppr.delete('age');
+
+        //Map자료 반복문 돌리기
+        for (var key of PPr.keys()) {
+            console.log(key)
+        }
+
+        var JJJ = new Set(['john', 'tom', 'andy', 'tom']);
+        JJJ.add('sally'); //자료더하기 
+        JJJ.has('tom'); //자료있는지 확인
+        JJJ.size;  //자료 몇갠지 세기
+        console.log("aaaa===" + [...JJJ]);
+        var JJJ2 = new Set(JJJ);
+        JJJ = [...JJJ2]
+
+        console.log(JJJ);
+        var arrAA = {};
+        arrAA['A'] = 1;
+        arrAA['B'] = 'goodaaa';
+
+        for (var kk in arrAA) {
+            console.log(arrAA[kk]);
+        }
+
+        var arrAAA = new Array(11, 21, 31);
+        for (var kk of arrAAA) {
+            console.log(kk);
+        }
+
+
+        var arrM = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        for (var j of arrM) {
+            for (var i of arrM) {
+                console.log(`${j} * ${i} = ${j * i}`);
+            }
+        }
+
+        var promiseE = new Promise((S, R) => {
+            document.getElementById('BTN1').addEventListener('click', () => {
+                S();
+            });
+        })
+
+        async function btnP() {
+            var Ret = await promiseE;
+            console.log("Reaaat");
+        }
+
+        btnP();
+
+        async function btnP2() {
+            var promiseE = new Promise((S, R) => {
+                document.getElementById('BTN2').addEventListener('click', () => {
+                    S("aaaaa");
+                });
+            })
+
+            var Ret = await promiseE;
+            console.log(Ret);
+
+        }
+
+        btnP2();
+        let fnC1 = (fnC) => {
+            console.log(1);
+            fnC();
+        }
+
+        let fnC2 = () => {
+            console.log(2);
+        }
+
+        fnC1(fnC2);
+
+        let fnC3 = () => {
+            console.log(3);
+        }
+
+
+
+
+        var promisA = new Promise((S, R) => {
+
+            var img = document.querySelector('#TT');
+
+            img.addEventListener('load', () => {
+                S("good!");
+            })
+
+            img.addEventListener('error', () => {
+                R();
+            })
+
+            // var SS = 0;
+            // if (1 < SS)
+            //     S(SS);
+            // else R();
+        })
+
+        var promisB = new Promise((S, R) => {
+
+            var SS = 5;
+            if (1 < SS)
+                S(SS);
+            else R();
+        })
+
+        promisA.then((a) => {
+            console.log(a);
+            return promisB;
+        }).then((b) => {
+            console.log(b);
+        }).catch(() => {
+            console.log("Fail");
+        })
+
+
+        // $.ajax({
+        //     type : 'GET',
+        //     url : 'URL 경로'
+        // })
+
+        // $.get('https://codingapple1.github.io/hello.txt').done((res) => {
+        //     console.log(res)
+        // });
+
+        // $.get('https://codingapple1.github.io/hello2.txt').done((res) => {
+        //     console.log(res)
+        // });
+
+
+        var H1 = 'https://codingapple1.github.io/hello.txt';
+        var H2 = 'https://codingapple1.github.io/hello2.txt';
+
+        let fnGetCall = (Url) => {
+            $.get(Url).done((res) => {
+                console.log(res);
+                return 'S';
+            }).fail(() => {
+                console.log('res fail!');
+                return 'F';
+            });
+        }
+
+        var promisC = new Promise((S, R) => {
+            var SF = fnGetCall(H1);
+            if (SF === 'S')
+                S();
+            else
+                R();
+        })
+
+        var promisD = new Promise((S, R) => {
+            fnGetCall(H2);
+        })
+
+        promisC.then(() => {
+            console.log('PromisC');
+            return promisD;
+        }).catch(() => {
+            console.log('PromisD');
+        })
+
+    </script>
+</body>
+
+</html>

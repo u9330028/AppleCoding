@@ -14,13 +14,14 @@
     <script type="module">
 
         // import cccc, { aaaa, bbbb } from './JS/LibImExport.js';
-        import cccc, { aaaa as a, bbbb as b } from './JS/LibImExport.js';
+        import cccc, { aaaa as a, bbbb as b, sum } from './JS/LibImExport.js';
         console.log(cccc);
         console.log(a + b);
 
         console.log(1);
         setTimeout(() => { console.log(3) }, 100);
         console.log(2);
+        console.log(sum);
         // var myWorker = new Worker('worker.js');
 
         // myWorker.onmessage = function (e) {
