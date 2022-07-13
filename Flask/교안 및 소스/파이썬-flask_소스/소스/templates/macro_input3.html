@@ -1,0 +1,31 @@
+{#
+    매크로 객체에서 제공하는 메타정보(객체 속성)
+
+     - name : 매크로 객체의 이름
+     - arguments : 메크로에 선언되어 있는 파라미터 목록(튜플로 반환)
+     - default : 매크로 인자가 받는 기본값 목록(튜플로 반환)
+     - catch_kwargs : 매크로 바디에서 키워드 인자를 참조하면  True를 반환하고, 참조하지 않으면 False반환
+     - catch_varargs : 매크로 바디에서 가변 인자를 참조하면 True를 반환하고, 참조하지 않으면 False를 반환
+     - caller : 매크로를 호출한 영역이 call 블록이면 True를 반환하고, 아니면 False를 반환
+
+     매크로 바디에서 매크로 객체를 참조할 때는 매크로 이름을 이용하여 참조한다.
+
+     매크로 객체에 접근하는 방법(아래 코드 참조)
+ #}
+
+     {% macro form_input(name, arg1 = 'args1') -%}
+         <input type="{{ kwargs['type'] or 'text' }}" name="{{ name }}" value=""{{ kwargs['value']|e or ''}}
+                              size="{{kwargs['size'] or 30}}" class="{{ varargs[0] }}">
+         <ul>
+            <li>macro name : {{ form_input.name }}</li>
+            <li>arguments : {{ form_input.arguments }}</li>
+            <li>defaults : {{ form_input.defaults }}</li>
+            <li>catch_kwargs : {{ form_input.catch_kwargs }}</li>
+            <li>catch_varargs : {{ form_input.catch_varargs}}</li>
+            <li>caller : {{ form_input.caller }} </li>
+         </ul>
+     {% endmacro%}
+
+
+<p>{{ form_input('username')}}</p>
+ 

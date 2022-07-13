@@ -1,0 +1,24 @@
+{#
+    call 블록 : call 명령을 이용해서 매크로를 호출 한 경우 해당 블록을 call 블록이라고 한다.
+
+    {% call 매크로명 %}
+        매크로를 호출했을 때 포함할 내용
+    {% endcall%}
+
+    매크로 내부에는 {{ caller() }} 기술한다.
+    이때 caller() 는 call블록 바디에 있는 내용을 가져온다.
+#}
+
+    {% macro render_dialog(title, class='dialog') -%}
+     <div class ="{{ class }}">
+         <h2>{{ title }}</h2>
+         <div class = "contents">
+             {{ caller() }}
+         </div>
+     </div> 
+    {%- endmacro %}
+
+     {% call render_dialog('Call Block') %}
+         Call 블록과 매크로는 동시에 사용하는 경우가 많다.
+         잘 익혀 두시기 바랍니다.
+     {% endcall %}

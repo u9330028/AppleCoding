@@ -1,0 +1,34 @@
+{#
+    인자를 받는 call 블록 선언하기
+
+    {% call(args) 매크로명 %}
+        call이 받은 인자를 처리한다.
+    {% endcall %}
+#}
+
+    {% macro user_info(users) -%}
+        <ul>
+            {%- for user in users %}
+                <li><p>{{ user['user_name'] | e }}</p>{{ caller(user_data = user) }}</li>
+            {%- endfor %}
+        </ul>
+    {%- endmacro %}
+
+    {% call(user_data) user_info(user_list)%}
+        <dl>
+            <dl>  User Name</dl>
+            <dd>{{ user_data['name'] }}</dd>
+            <dl> User Job </dl>
+            <dd>{{ user_data['job'] }}</dd>
+        </dl>
+    {% endcall%}
+                                                        
+{# 위의 템플릿 수행을 위해서는 다음과 같은 데이터가 필요함
+    user_list에 형식은 = [ {'user_name':'Hong', 'name':'홍길동', 'job':'개발자'}, { }]
+#}
+
+
+
+
+
+                                                        

@@ -1,0 +1,12 @@
+{#
+    매크로의 특별 변수
+
+    - varargs : 매크로가 추가로 받은 가변 인다를 참조할 때 사용하며, 리스트 형태의 인자
+    - kwargs: 매크로가 추가로  받은 키워드 인자를 참조할 때 사용한다. 사전형태
+    - caller : 매크로를 호출한 call 블록을 호출하기 위해서 사용하며, 매크로가 call블록에서
+                 호출 되었을 때만 사용가능
+#}
+    {% macro input() -%}
+        <input type="{{ kwargs['type'] or 'text' }}" name="{{ varargs[0] }}"
+    value="{{ kwargs['value'] | e or '' }}" size="{{ kwargs['size'] or 30 }}">
+    {%- endmacro%}
